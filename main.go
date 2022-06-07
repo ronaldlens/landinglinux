@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -30,20 +29,22 @@ func readData() {
 	jsonString := string(dat)
 	cards = CardsData{}
 
-	json.Unmarshal([]byte(jsonString), &cards)
+	err = json.Unmarshal([]byte(jsonString), &cards)
+	if err != nil {
+		panic(err)
+	}
 	logger.Println("Loaded data")
 }
 
-func indexHandler(w http.ResponseWriter, r *http.Request) {
+func indexHandler(w http.ResponseWriter, _ *http.Request) {
 	tpl := template.Must(template.ParseFiles("index.html"))
 	readData()
-	tpl.Execute(w, cards)
-	logger.Print("Render index")
-}
+	err := tpl.Execute(w, cards)
+	if err != nil {
+		panic(err)
+	}
 
-func Sample() string {
-	fmt.Println("test from web")
-	return "hello"
+	logger.Print("Render index")
 }
 
 func startServer() {
@@ -59,7 +60,11 @@ func startServer() {
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	mux.HandleFunc("/", indexHandler)
 
-	http.ListenAndServe(":"+port, mux)
+	err := http.ListenAndServe(":"+port, mux)
+	if err != nil {
+		panic(err)
+	}
+
 }
 
 func main() {
