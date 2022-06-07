@@ -13,8 +13,8 @@ FROM alpine:latest
 WORKDIR /
 
 COPY --from=build /app/landinglinux /landinglinux
-COPY ./assets/* /assets
-COPY ./data/* /data
+COPY ./assets/* /assets/
+COPY ./data/* /data/
 COPY ./index.html /
 
 EXPOSE 80

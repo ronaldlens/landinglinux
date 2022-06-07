@@ -1,0 +1,17 @@
+version: '3'
+services:
+  landinglinux:
+    container_name: landinglinux
+    image: "landinglinux:multistage"
+    volumes:
+      - /volume1/docker/landinglinux:/data
+    restart: unless-stopped
+    privileged: true
+    networks:
+      macvlan:
+        ipv4_address: 192.168.1.219
+
+networks:
+  macvlan:
+    external:
+      name: macvlan
