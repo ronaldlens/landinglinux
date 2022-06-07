@@ -1,0 +1,45 @@
+{"cards": [
+  {
+    "title": "pfSense",
+    "subtitle": "The firewall",
+    "text": "Firewall, IDS, VPN, DHCP",
+    "button": "Webadmin",
+    "url": "http://192.168.1.1/"
+  },
+  {
+    "title": "Unifi",
+    "subtitle": "Dashboard",
+    "text": "",
+    "button": "Portal",
+    "url": "https://unifi.ui.com/dashboard"
+  },
+  {
+    "title": "Portainer",
+    "subtitle": "Docker manager",
+    "text": "Docker on DSM",
+    "button": "Console",
+    "url": "http://192.168.1.213:9000/"
+  },
+  {
+    "title": "PiHole",
+    "subtitle": "Addblocker",
+    "text": "No more ads, local DNS",
+    "button": "Webadmin",
+    "url": "http://192.168.1.212"
+  },
+  {
+    "title": "DSM",
+    "subtitle": "Network attached storage",
+    "text": "Files and Docker and stuff",
+    "button": "Webadmin",
+    "url": "http://192.168.1.2:5000/"
+  },
+  {
+    "title": "Home Assistant",
+    "subtitle": "Automate ALL the things",
+    "text": "",
+    "button": "Home page",
+    "url": "http://192.168.1.218:8123/"
+  }
+]
+}
