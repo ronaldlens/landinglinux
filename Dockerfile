@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY go.mod ./
 COPY main.go ./
-RUN go build -o landinglinux
+RUN CGO_ENABLED=0 go build -ldflags '-s -w -extldflags"-static"' -o landinglinux
 
 FROM alpine:latest
 
