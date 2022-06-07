@@ -49,7 +49,7 @@ func Sample() string {
 func startServer() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "3000"
+		port = "80"
 	}
 
 	mux := http.NewServeMux()
