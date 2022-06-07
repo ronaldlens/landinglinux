@@ -12,11 +12,10 @@ FROM alpine:latest
 
 WORKDIR /
 
-COPY --from=build /landinglinux /landinglinux
+COPY --from=build /app/landinglinux /landinglinux
 COPY ./assets/* /assets
 COPY ./data/* /data
 COPY ./index.html /
 
-WORKDIR /
 EXPOSE 80
 ENTRYPOINT ["/landinglinux"]
